@@ -63,6 +63,7 @@ docker-runtest-all: ## Executed the test suite in a test container.
 
 docker-runtest-coverage: ## Executed the test suite in a test container.
 	docker run --rm $(DOCKER_IMAGE_MAYAN_NAME):$(IMAGE_VERSION) run_tests coverage run --source mayan/apps
+	docker run --rm $(DOCKER_IMAGE_MAYAN_NAME):$(IMAGE_VERSION) run_tests coverage report	
 
 docker-compose-build:
 	docker-compose -f docker/docker-compose.yml -p mayan-edms build
